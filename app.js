@@ -38,11 +38,11 @@ const checkRight = () => {
     if (option.checked) {
       let selectedOpt = option.nextSibling.nextSibling.innerText;
 
-      console.log(selectedOpt);
-      // console.log(selectedOpt, questions[num].correctOption);
-      // if (selectedOpt == questions[num].correctOption) {
-      //   score++;
-      // }
+    //   console.log(selectedOpt);
+      console.log(selectedOpt, questions[num].correctOption);
+      if (selectedOpt == questions[num].correctOption) {
+        score++;
+      }
     }
 
     option.checked = false;
@@ -68,8 +68,6 @@ const showQuestion = () => {
     let thirdOpt = document.querySelector("#option3");
     thirdOpt.innerHTML = questions[num].option3;
 
-    checkRight();
-    num++;
   }
 };
 
@@ -78,5 +76,7 @@ showQuestion();
 let nextBtn = document.querySelector("#nextQues");
 
 nextBtn.addEventListener("click", () => {
+     checkRight();
+     num++;    
   showQuestion();
 });
